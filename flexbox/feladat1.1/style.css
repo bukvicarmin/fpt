@@ -1,0 +1,22 @@
+.tarolo{
+    width: 100%;
+    height: 300px;
+    display: flex;
+}
+
+.elem{
+    width: 100%;
+    height: 100%;
+}
+
+.elem1{
+    background-color: green;
+}
+
+.elem2{
+    background-color: yellow;
+}
+
+.elem3{
+    background-color: purple;
+}

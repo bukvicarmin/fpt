@@ -1,0 +1,29 @@
+.tarolo{
+    width: 600px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.elem{
+    width: 100%;
+    height: 100%;
+}
+
+.elem1{
+    background-color: green;
+    flex: 1;
+    order: 1;
+}
+
+.elem2{
+    background-color: yellow;
+    flex: 2;
+    order: 3;
+}
+
+.elem3{
+    background-color: purple;
+    flex: 1;
+    order: 2;
+}
