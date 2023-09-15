@@ -1,0 +1,54 @@
+:root{
+    --szin1: #8a2be3;
+    --szin2: #aed7e5;
+    --szin3: #04ffff;
+    --szin4: #008080;
+    --szin5: #da7192;
+    --szin6: #ffbfcb;
+    --szin7: #ff00ff;
+    --szin8: #fa8072;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.elem{
+    width: 400px;
+    height: 200px;
+    /* background-color: red; */
+}
+
+.elem1 {
+    background-color: var(--szin1);
+}
+.elem2 {
+    background-color: var(--szin2);
+}
+.elem3 {
+    background-color: var(--szin3);
+}
+.elem4 {
+    background-color: var(--szin4);
+}
+.elem5 {
+    background-color: var(--szin5);
+}
+.elem6 {
+    background-color: var(--szin6);
+}
+.elem7 {
+    background-color: var(--szin7);
+}
+.elem8 {
+    background-color: var(--szin8);
+}
