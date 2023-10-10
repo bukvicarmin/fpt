@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function getRandomOrder([...items]) {
+            let randomized = []
+            for (let i = 0; i < items.length; i++) {
+                const filteredArray = items.filter(item => !randomized.includes(item))
+                const currLength = filteredArray.length
+                const randomIndex = Math.trunc(Math.random()*currLength)
+                randomized.push(filteredArray[randomIndex])                
+            }
+            console.log(randomized);
+        }
+        
+        getRandomOrder(["h", "k", "sze", "cs", "p", "szo", "v"])
+        getRandomOrder([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
