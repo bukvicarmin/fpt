@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let fizetes = {
+            Anna : 2100,
+            Cecil : 1890,
+            Emil : 2050,
+            Gerald : 2920
+        }
+
+        let fizetesek = []
+        for (const [szemely,osszeg] of Object.entries(fizetes)) {
+            document.write(`${szemely} fizetése: ${osszeg}<br>`);
+            fizetesek.push(osszeg)
+        }
+        
+        document.write(`Fizetések összesen: ${fizetesek.reduce((acc,curr) => acc += curr)}`)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
