@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .kartyak{
+            display: flex;
+            gap: 20px;
+        }
+
+        .kartya{
+            display: flex;
+            background-color: rgb(107, 107, 174);
+            flex-direction: column;
+            text-align: center;
+            padding: 50px;
+            gap: 10px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .job{
+            color: yellow;
+            margin-top: 50px;
+            font-variant: small-caps;
+        }
+    </style>
+<body>
+    
+    <div class="kartyak">
+    </div>
+
+    <script>
+        const kartyak = document.querySelector('.kartyak')
+        let heroes = [ 
+        {firstName: "Ahsoka", lastName: "Tano", job: "padawan"},
+        {firstName: "Boba", lastName: "Fett", job: "fejvadász"},
+        {firstName: "Han", lastName: "Solo", job: "csempész"},
+        {firstName: "Leia", lastName: "Organa", job: "szenátor"},
+        {firstName: "Proba", lastName: "Sanyi", job: "kertész"}
+        ]
+
+        heroes.forEach(hero => {
+
+            let html = `
+            <div class="kartya">
+            <p class="first-name">${hero.firstName}</p>
+            <p class="last-name">${hero.lastName}</p>
+            <p class="job">${hero.job}</p>
+            </div>
+            `
+
+            kartyak.insertAdjacentHTML('beforeend',html)
+        })
+
+
+    </script>
+</body>
+</html>
