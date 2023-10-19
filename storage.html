@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <select class="selector" value="">
+        <option>Local</option>
+        <option>Session</option>
+    </select>
+    <input class="input1" type="text" name="" id="" placeholder="key">
+    <input class="input2" type="text" name="" id="" placeholder="value">
+    <button class="save">Mentés</button>
+
+    <div style="display:flex; gap: 50px" class="storage-display">
+        <p style="font-weight: 600;">Local storage</p>
+        <div class="local-storage">
+        </div>
+        <p style="font-weight: 600;">Session storage</p>
+        <div class="session-storage">
+        </div>
+    </div>
+
+    <button class="delete">Törlés</button>
+
+
+    <script>
+        const selector = document.querySelector('.selector')
+const input1 = document.querySelector('.input1')
+const input2 = document.querySelector('.input2')
+const localStorDiv = document.querySelector('.local-storage')
+const sessionStorDiv = document.querySelector('.session-storage')
+const save = document.querySelector('.save')
+const deleteBtn = document.querySelector('.delete')
+
+console.log(localStorage);
+
+const updateViewLocal =  function() {
+    localStorDiv.innerHTML = ""
+    if (localStorage.length == 0) {
+        localStorDiv.insertAdjacentHTML('beforeend','<p>Nincs adat</p>')
+    } else {
+        Object.entries(localStorage).forEach(el => {
+            localStorDiv.insertAdjacentHTML('beforeend',`<p>${el[0]} - ${el[1]}</p>`)
+        });
+    }
+}
+
+const updateViewSession =  function() {
+    sessionStorDiv.innerHTML = ""
+    if (sessionStorage.length == 0) {
+        sessionStorDiv.insertAdjacentHTML('beforeend','<p>Nincs adat</p>')
+    } else {
+        Object.entries(sessionStorage).forEach(el => {
+            sessionStorDiv.insertAdjacentHTML('beforeend',`<p>${el[0]} - ${el[1]}</p>`)
+        });
+    }
+}
+
+updateViewLocal()
+updateViewSession()
+
+
+save.addEventListener('click',function() {
+    if (selector.value == "Local") {
+        localStorage.setItem(input1.value,input2.value)
+        const currentStorageItem = localStorage.getItem(input1.value);
+        localStorDiv.insertAdjacentHTML('beforeend',`<p>${currentStorageItem}</p>`)
+        updateViewLocal()
+    } else if (selector.value == "Session") {
+        sessionStorage.setItem(input1.value,input2.value)
+        const currentStorageItem = sessionStorage.getItem(input1.value);
+        sessionStorDiv.insertAdjacentHTML('beforeend',`<p>${currentStorageItem}</p>`)
+        updateViewSession()
+
+    }
+})
+
+deleteBtn.addEventListener('click',function() {
+    localStorage.clear()
+    sessionStorage.clear()
+    updateViewLocal()
+    updateViewSession()
+})
+    </script>
+</body>
+</html>
